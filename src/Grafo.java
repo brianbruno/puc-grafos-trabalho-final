@@ -4,13 +4,13 @@ public class Grafo {
 
     List<Nodo> nodos;  // todos os vértices do grafo
 
-    public Grafo(List<Nodo> nodos) {
-        this.nodos = nodos;
+    public void adicionarNodo(Nodo nodo) {
+        nodos.add(nodo);
     }
 
     boolean isadjacente (Nodo n1, Nodo n2) { return false; }
 
-    int getGrau (Nodo n1) { return false; }
+    int getGrau (Nodo n1) { return 0; }
 
     boolean isRegular (Grafo G) { return false; }
 
@@ -26,7 +26,7 @@ public class Grafo {
 
     boolean isBipartido (Grafo G) { return false; }
 
-    Grafo getComplementar (Grafo G) { return false; }
+    Grafo getComplementar (Grafo G) { return null; }
 
     boolean isEuleriano (Grafo G ) { return false; }
 
@@ -34,11 +34,11 @@ public class Grafo {
 
     boolean hasCiclo (Grafo G) { return false; }
 
-    int getGrauEntrada (Nodo n1) { return false; }
+    int getGrauEntrada (Nodo n1) { return 0; }
 
-    void ordenacaoTopologica (Grafo G) { return false; } //verifique se o grafo é acíclico antes
+    void ordenacaoTopologica (Grafo G) { return; } //verifique se o grafo é acíclico antes
 
-    Grafo getTransposto (Grafo G) { return false; }
+    Grafo getTransposto (Grafo G) { return null; }
 
     boolean isFConexo (Grafo G) { return false; }
 
