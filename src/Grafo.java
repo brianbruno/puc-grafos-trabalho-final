@@ -1,14 +1,27 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Grafo {
 
-    List<Nodo> nodos;  // todos os vértices do grafo
+    List<Nodo> nodos = new ArrayList<>();  // todos os vértices do grafo
 
     public void adicionarNodo(Nodo nodo) {
         nodos.add(nodo);
     }
 
-    boolean isadjacente (Nodo n1, Nodo n2) { return false; }
+    boolean isadjacente (Nodo n1, Nodo n2) {
+
+        boolean adjacente = false;
+
+        if (n1.incide(n2) || n2.incide(n1)) {
+            adjacente = true;
+            System.out.println("Grafo " + n1.getValor() + " e " + n2.getValor() + " são adjacentes.");
+        } else {
+            System.out.println("Grafo " + n1.getValor() + " e " + n2.getValor() + " não são adjacentes.");
+        }
+
+        return adjacente;
+    }
 
     int getGrau (Nodo n1) { return 0; }
 

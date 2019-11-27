@@ -6,14 +6,14 @@ public class App {
         Grafo grafoNaoDirigido = new Grafo();
 
         // Grafo dirigido
-        Nodo n1 = new Nodo();
-        Nodo n2 = new Nodo();
-        Nodo n3 = new Nodo();
-        Nodo n4 = new Nodo();
-        Nodo n5 = new Nodo();
-        Nodo n6 = new Nodo();
-        Nodo n7 = new Nodo();
-        Nodo n8 = new Nodo();
+        Nodo n1 = new Nodo("1");
+        Nodo n2 = new Nodo("2");
+        Nodo n3 = new Nodo("3");
+        Nodo n4 = new Nodo("4");
+        Nodo n5 = new Nodo("5");
+        Nodo n6 = new Nodo("6");
+        Nodo n7 = new Nodo("7");
+        Nodo n8 = new Nodo("8");
 
         n3.addIncidencia(n1);
         n3.addIncidencia(n2);
@@ -40,13 +40,22 @@ public class App {
         grafoDirigido.adicionarNodo(n7);
         grafoDirigido.adicionarNodo(n8);
 
+        // -------------- OPERACOES
+        System.out.println("OPERAÇÕES COM GRAFO DIRIGIDO");
+
+        grafoDirigido.isadjacente(n3, n6);
+        grafoDirigido.isadjacente(n1, n8);
+
+
+
+
         // Grafo não dirigido
-        Nodo n01 = new Nodo();
-        Nodo n02 = new Nodo();
-        Nodo n03 = new Nodo();
-        Nodo n04 = new Nodo();
-        Nodo n05 = new Nodo();
-        Nodo n06 = new Nodo();
+        Nodo n01 = new Nodo("01");
+        Nodo n02 = new Nodo("02");
+        Nodo n03 = new Nodo("03");
+        Nodo n04 = new Nodo("04");
+        Nodo n05 = new Nodo("05");
+        Nodo n06 = new Nodo("06");
 
         n01.addIncidencia(n02);
         n01.addIncidencia(n05);
