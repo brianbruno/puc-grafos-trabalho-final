@@ -86,9 +86,29 @@ public class Grafo {
         return isPendente;
     }
 
-    boolean isNulo (Grafo G) { return false; }
+    boolean isNulo () {
+        // Quando o grafo não tem arestas
 
-    boolean isCompleto (Grafo G) { return false; }
+        boolean possuiArestas = false;
+
+        for(Nodo vertice : nodos){
+            if(vertice.incidencias.size() > 0) {
+                possuiArestas = true;
+            }
+        }
+
+        if (possuiArestas) {
+            System.out.println("Grafo não é nulo.");
+        } else {
+            System.out.println("Grafo é nulo.");
+        }
+
+        return possuiArestas;
+    }
+
+    boolean isCompleto (Grafo G) {
+        return false;
+    }
 
     boolean isConexo (Grafo G) { return false; }
 

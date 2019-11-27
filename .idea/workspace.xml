@@ -5,10 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Grafo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Nodo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Nodo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Nodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nodo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574202546365</updated>
       <workItem from="1574202558913" duration="2879000" />
-      <workItem from="1574822135332" duration="2160000" />
+      <workItem from="1574822135332" duration="2728000" />
     </task>
     <servers />
   </component>

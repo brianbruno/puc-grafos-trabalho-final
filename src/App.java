@@ -95,6 +95,8 @@ public class App {
         grafoNaoDirigido.isPendente(n06);
         grafoNaoDirigido.isPendente(n01);
 
+        grafoDirigido.isNulo();
+
     }
 
 }
