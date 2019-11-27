@@ -43,6 +43,12 @@ public class App {
         // -------------- OPERACOES
         System.out.println("OPERAÇÕES COM GRAFO DIRIGIDO");
 
+        grafoDirigido.getGrauEntrada(n1);
+        grafoDirigido.getGrauEntrada(n2);
+        grafoDirigido.ordenacaoTopologica();
+        grafoDirigido.getTransposto();
+        grafoDirigido.isFConexo();
+
 
         // Grafo não dirigido
         Nodo n01 = new Nodo("01");
@@ -95,7 +101,11 @@ public class App {
         grafoNaoDirigido.isPendente(n06);
         grafoNaoDirigido.isPendente(n01);
 
-        grafoDirigido.isNulo();
+        grafoNaoDirigido.isNulo();
+
+        grafoNaoDirigido.isCompleto();
+
+        grafoNaoDirigido.isConexo();
 
     }
 

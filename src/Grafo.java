@@ -106,13 +106,77 @@ public class Grafo {
         return possuiArestas;
     }
 
-    boolean isCompleto (Grafo G) {
+    boolean isCompleto () {
+
+        // verifica se todos os vértices são adjacentes a todos os outros vértices
+
+        boolean isCompleto = true;
+
+        if (this.nodos.size() > 0) {
+            int arestasNecessarias = this.nodos.size() - 1;
+
+            for(Nodo vertice : nodos){
+                if(vertice.incidencias.size() != arestasNecessarias) {
+                    isCompleto = false;
+                }
+            }
+        }
+
+        if (isCompleto) {
+            System.out.println("Grafo completo.");
+        } else {
+            System.out.println("Grafo não é completo.");
+        }
+
+        return isCompleto;
+    }
+
+    boolean isConexo () {
+        for (int i = 1; i < nodos.size(); i++) {
+            for (int j = 1; j < nodos.size(); j++) {
+                Grafo grafoVazio = new Grafo();
+                if (!consegueChegar(nodos.get(i), nodos.get(j), grafoVazio) && i != j) {
+                    System.out.println("Grafo não conexo.");
+                    return false;
+                }
+            }
+        }
+        System.out.println("Grafo é conexo.");
+        return true;
+    }
+
+    private boolean consegueChegar(Nodo verticeAtual, Nodo verticeProcurado, Grafo g) {
+        if (nodos.contains(verticeAtual))
+            return false;
+        else if (isadjacente(verticeAtual, verticeProcurado))
+            return true;
+        else {
+            g.adicionarNodo(verticeAtual);
+            List<Nodo> listaAdjacentes = buscarVerticesAdjacentes(verticeAtual);
+            if (listaAdjacentes != null) {
+                for (Nodo v : listaAdjacentes) {
+                    if (consegueChegar(v, verticeProcurado, g)) {
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
 
-    boolean isConexo (Grafo G) { return false; }
+    private List<Nodo> buscarVerticesAdjacentes(Nodo v) {
+        List<Nodo> listaAdjacentes = new ArrayList<Nodo>();
+        for (Nodo vertice : nodos) {
+            if (isadjacente(v, vertice))
+                listaAdjacentes.add(vertice);
+        }
 
-    boolean isBipartido (Grafo G) { return false; }
+        return listaAdjacentes;
+    }
+
+    boolean isBipartido () {
+
+    }
 
     Grafo getComplementar (Grafo G) { return null; }
 
@@ -124,10 +188,10 @@ public class Grafo {
 
     int getGrauEntrada (Nodo n1) { return 0; }
 
-    void ordenacaoTopologica (Grafo G) { return; } //verifique se o grafo é acíclico antes
+    void ordenacaoTopologica () { return; } //verifique se o grafo é acíclico antes
 
-    Grafo getTransposto (Grafo G) { return null; }
+    Grafo getTransposto () { return null; }
 
-    boolean isFConexo (Grafo G) { return false; }
+    boolean isFConexo () { return false; }
 
 }
