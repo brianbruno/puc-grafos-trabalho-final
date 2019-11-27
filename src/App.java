@@ -43,11 +43,6 @@ public class App {
         // -------------- OPERACOES
         System.out.println("OPERAÇÕES COM GRAFO DIRIGIDO");
 
-        grafoDirigido.isadjacente(n3, n6);
-        grafoDirigido.isadjacente(n1, n8);
-
-
-
 
         // Grafo não dirigido
         Nodo n01 = new Nodo("01");
@@ -83,6 +78,22 @@ public class App {
         grafoNaoDirigido.adicionarNodo(n04);
         grafoNaoDirigido.adicionarNodo(n05);
         grafoNaoDirigido.adicionarNodo(n06);
+
+        System.out.println("OPERAÇÕES COM GRAFO NÃO DIRIGIDO");
+
+        grafoNaoDirigido.isadjacente(n06, n04);
+        grafoNaoDirigido.isadjacente(n01, n03);
+
+        grafoNaoDirigido.getGrau(n04);
+        grafoNaoDirigido.getGrau(n03);
+
+        grafoNaoDirigido.isRegular();
+
+        grafoNaoDirigido.isIsolado(n02);
+        grafoNaoDirigido.isIsolado(n05);
+
+        grafoNaoDirigido.isPendente(n06);
+        grafoNaoDirigido.isPendente(n01);
 
     }
 

@@ -29,6 +29,7 @@ class Nodo
     public String getValor() {
         return valor;
     }
+
     public boolean incide(Nodo nodo) {
         AtomicBoolean incide = new AtomicBoolean(false);
 

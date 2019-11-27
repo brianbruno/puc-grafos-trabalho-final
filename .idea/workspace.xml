@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f9b95167-b792-44c7-a76d-58c1bba7cbc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Grafo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Grafo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Nodo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/puc-grafos-trabalho-final/Nodo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Grafo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grafo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Nodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Nodo.java" afterDir="false" />
@@ -77,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1574202546365</updated>
       <workItem from="1574202558913" duration="2879000" />
-      <workItem from="1574822135332" duration="1023000" />
+      <workItem from="1574822135332" duration="2160000" />
     </task>
     <servers />
   </component>
@@ -94,19 +97,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/App.java</url>
-          <line>2</line>
-          <properties class="App" method="main">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

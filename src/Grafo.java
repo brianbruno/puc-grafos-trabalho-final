@@ -23,13 +23,68 @@ public class Grafo {
         return adjacente;
     }
 
-    int getGrau (Nodo n1) { return 0; }
+    int getGrau (Nodo n1) {
+        int grau = n1.incidencias.size();
+        System.out.println("Grau do vértice " + n1.getValor() + ": " + grau);
+        return grau;
+    }
 
-    boolean isRegular (Grafo G) { return false; }
+    boolean isRegular () {
 
-    boolean isIsolado (Nodo n1) { return false; }
+        // Quando todos os vértices possuem o mesmo grau
 
-    boolean isPendente (Nodo n1) { return false; }
+        boolean isRegular = true;
+        if (this.nodos.size() > 0) {
+            int grauPadrao = this.nodos.get(0).incidencias.size();
+
+            for(Nodo vertice : nodos){
+                if(vertice.incidencias.size() != grauPadrao) {
+                    isRegular = false;
+                }
+            }
+        }
+
+        if (isRegular) {
+            System.out.println("Grafo regular.");
+        } else {
+            System.out.println("Grafo não regular.");
+        }
+
+        return isRegular;
+    }
+
+    boolean isIsolado (Nodo n1) {
+
+        // Quando vértice possui grau zero.
+
+        boolean isIsolado = false;
+
+        if(n1.incidencias.size() == 0) {
+            isIsolado = true;
+
+            System.out.println("Vértice " + n1.getValor() + " é isolado");
+        } else {
+            System.out.println("Vértice " + n1.getValor() + " não é isolado");
+        }
+
+        return isIsolado;
+    }
+
+    boolean isPendente (Nodo n1) {
+        // Quando o vértice possui grau 1
+
+        boolean isPendente = false;
+
+        if (n1.incidencias.size() == 1) {
+            isPendente = true;
+
+            System.out.println("Vértice " + n1.getValor() + " é pendente.");
+        } else {
+            System.out.println("Vértice " + n1.getValor() + " não é pendente.");
+        }
+
+        return isPendente;
+    }
 
     boolean isNulo (Grafo G) { return false; }
 
