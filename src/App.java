@@ -45,6 +45,7 @@ public class App {
 
         grafoDirigido.getGrauEntrada(n1);
         grafoDirigido.getGrauEntrada(n2);
+        grafoDirigido.getGrauEntrada(n3);
         grafoDirigido.ordenacaoTopologica();
         grafoDirigido.getTransposto();
         grafoDirigido.isFConexo();
@@ -106,6 +107,15 @@ public class App {
         grafoNaoDirigido.isCompleto();
 
         grafoNaoDirigido.isConexo();
+
+        grafoNaoDirigido.getComplementar();
+
+        grafoNaoDirigido.isBipartido();
+        grafoNaoDirigido.isEuleriano();
+
+        grafoNaoDirigido.isUnicursal();
+
+        grafoNaoDirigido.hasCiclo();
 
     }
 

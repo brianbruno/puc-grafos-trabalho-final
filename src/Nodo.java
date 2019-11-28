@@ -12,6 +12,10 @@ class Nodo
             this.nodo = nodo;
             this.peso = peso;
         }
+
+        public void inverter() {
+
+        }
     }
 
     private String valor;

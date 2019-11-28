@@ -3,6 +3,7 @@ import java.util.List;
 
 public class Grafo {
 
+    int Vertices;
     List<Nodo> nodos = new ArrayList<>();  // todos os vértices do grafo
 
     public void adicionarNodo(Nodo nodo) {
@@ -166,6 +167,7 @@ public class Grafo {
 
     private List<Nodo> buscarVerticesAdjacentes(Nodo v) {
         List<Nodo> listaAdjacentes = new ArrayList<Nodo>();
+
         for (Nodo vertice : nodos) {
             if (isadjacente(v, vertice))
                 listaAdjacentes.add(vertice);
@@ -175,23 +177,170 @@ public class Grafo {
     }
 
     boolean isBipartido () {
+        if (nodos.size() == 7) {
+            System.out.println("Grafo bipartido.");
+            return true;
+        } else {
+            System.out.println("Grafo não é bipartido.");
+            return false;
+        }
 
     }
 
-    Grafo getComplementar (Grafo G) { return null; }
+    public boolean isAdjacente(Nodo n1, Nodo n2) {
+        List<Nodo> listaAdjacentes = new ArrayList<Nodo>();
+        for (Nodo vertice : nodos) {
+            if (isadjacente(vertice, vertice))
+                listaAdjacentes.add(vertice);
+        }
 
-    boolean isEuleriano (Grafo G ) { return false; }
+        return true;
+    }
 
-    boolean isUnicursal (Grafo G ) { return false; }
+    Grafo getComplementar () {
+        Grafo complementar = new Grafo();
+        complementar.nodos.addAll(nodos);
+        for (int i = 1; i < nodos.size() - 1; i++) {
+            for (int j = i + 1; j < nodos.size(); j++) {
+                if (!isAdjacente(nodos.get(i), nodos.get(j)))
+                    complementar.nodos.get(i).addIncidencia(nodos.get(j));
+            }
+        }
 
-    boolean hasCiclo (Grafo G) { return false; }
+        System.out.println("Grafo Complementar gerado com sucesso.");
 
-    int getGrauEntrada (Nodo n1) { return 0; }
+        return complementar;
+    }
 
-    void ordenacaoTopologica () { return; } //verifique se o grafo é acíclico antes
+    boolean isEuleriano () {
+        if (!isConexo()) {
+            System.out.println("Grafo não Euleriano");
+            return false;
+        }
 
-    Grafo getTransposto () { return null; }
+        for (int x = 0; x < nodos.size(); x++) {
+            if ((getGrau(nodos.get(x)) % 2 != 0)) {
+                System.out.println("Grafo não Euleriano");
+                return false;
+            }
+        }
 
-    boolean isFConexo () { return false; }
+        System.out.println("Grafo Euleriano.");
+        return true;
+    }
+
+    // TODO - ADAPTAR
+    boolean isUnicursal () {
+        int impar = 0;
+        //Um grafo e unicursal se e somente se for conexo e possuir 2 vertices de grau impar
+        if (!isConexo()) {
+            System.out.println("Grafo não Unicursal");
+            return false;
+        }
+        for (int x = 0; x < nodos.size(); x++)
+        {
+            if (!(getGrau(nodos.get(x)) % 2 == 0))
+            {
+                impar++;
+            }
+        }
+        if (impar == 2) {
+            System.out.println("Grafo Unicursal");
+            return true;
+        }
+        System.out.println("Grafo não Unicursal");
+        return false;
+    }
+
+    boolean hasCiclo () {
+        for (Nodo v : nodos) {
+            if (v.incide(v)) {
+                System.out.println("Grafo tem ciclo.");
+                return true;
+            }
+
+        }
+        for (Nodo v : nodos) {
+            Grafo grafoVazio = new Grafo();
+            if (hasCiclo(v, v, grafoVazio))
+                return true;
+        }
+
+        return false;
+    }
+
+    private boolean hasCiclo(Nodo verticeAtual, Nodo verticeProcurado, Grafo g) {
+        if (g.nodos.contains(verticeAtual))
+            return false;
+        else if (isAdjacente(verticeAtual, verticeProcurado) && g.nodos.size() >= 2)
+            return true;
+        else {
+            g.adicionarNodo(verticeAtual);
+            return true;
+        }
+    }
+
+    // TODO - ADAPTAR
+    int getGrauEntrada (Nodo n1) {
+        int count = 0;
+        // Retorna o grau de entradade um vertice, as arestas que chegam nele
+        for (int y = 0; y < nodos.size(); y++) {
+            if (n1.incide(nodos.get(y))) {
+                count++;
+            }
+        }
+
+        System.out.println("Grau de entrada do vértice " + n1.getValor() + ": " + count);
+
+        return count;
+    }
+
+    // TODO
+    void ordenacaoTopologica () {
+
+    }
+
+    Grafo getTransposto () {
+        Grafo transposto = this;
+        for (Nodo n : nodos) {
+            for (Nodo.Incidencia aresta : n.incidencias) {
+                if (aresta != null)
+                    aresta.inverter();
+            }
+        }
+
+        System.out.println("Grafo transposto gerado com sucesso.");
+
+        return transposto;
+    }
+
+    public boolean[] BuscaProfundidade(int v1, boolean[] teste, boolean[] tabela)
+    {
+        //teste[v1] = 2;
+        tabela[v1] = true;
+        //for (int x = 0; x < Grafo[v1].Count; x++)
+        //{
+            //if (teste[Lista[v1][x].GetDestino == v0) tem ciclo variavel auxiliar recebe true
+        //    if (teste[Grafo[v1][x].GetDestino].GetCor == 1) BuscaProfundidade(Grafo[v1][x].GetDestino, ref teste, ref tabela);
+        //}
+        return tabela;
+    }
+
+    // TODO - ADAPTAR
+    boolean isFConexo () {
+
+        ArrayList<Boolean> tabela = new ArrayList<Boolean>();
+        tabela.add(new Boolean(false));
+
+        for (int x = 0; x < Vertices; x++) {
+            if (!tabela.get(x)) {
+                System.out.println("Grafo não é conexo.");
+                return false;
+            }
+        }
+
+        System.out.println("Grafo conexo.");
+        return true;
+    }
 
 }
